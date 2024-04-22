@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Command;
+
 use Psr\Log\LoggerInterface;
 use App\Service\ApiConnectorService;
 use App\Service\ShopImporterService;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Attribute\AsCommand;
-use Symfony\Component\Console\Command\Command;
 
 #[AsCommand(name: 'app:shop_importer',description: 'Import Shops Record From Static ENDPOINT',hidden: false,)]
 class ShopImporterCommand extends Command {

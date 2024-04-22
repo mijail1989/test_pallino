@@ -3,3 +3,8 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+get_offers:
+    path: '/api/v1/offers/{param}'
+    controller: 'App\Controller\DiscountController::getOffers'
+    methods: 'GET'

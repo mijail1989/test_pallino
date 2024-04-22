@@ -1,15 +1,31 @@
-breve descrizione
+# Descrizione
 
-Istruzioni per il collegamento
-ho usato un DB MySQL - bisogna configurarlo all'interno del file .env 
+Questo progetto è un'applicazione sviluppata con Symfony che fornisce API per accedere ai dati relativi agli shop e alle offerte.
 
-All'interno dell'applicazione ci sono 3 commandi per popolare i DB con i dati forniti:
+## Requisiti
 
-    name: 'app:discount_importer',description: 'Import Discounts Record From Static ENDPOINT'
-    name: 'app:shop_importer',description: 'Import Shops Record From Static ENDPOINT'
-    name: 'app:csv_shop_importer',description: 'Import Shops Record from CSV File given the Path as an input Parameter'
+- PHP >= 7.4
+- MySQL
+- Symfony
+- Doctrine
 
-Una volta popolato il DB per visualizzare i dati sono stati creati 2  ENDPOINT:
+## Installazione
 
-- Endpoint degli shop: http://localhost/shops
-- Endpoint degli utenti: http://localhost/users
+1. Clonare questo repository sul proprio ambiente locale.
+2. Eseguire `composer install` per installare le dipendenze.
+3. Copiare il file `.env.example` e rinominarlo in `.env`, quindi configurare le variabili d'ambiente necessarie come ad esempio la connessione al database.
+4. Eseguire `php bin/console doctrine:database:create` per creare il database.
+5. Eseguire `php bin/console doctrine:migrations:migrate` per eseguire le migrazioni e creare le tabelle nel database.
+
+### API
+
+Le seguenti API sono disponibili:
+
+- `/api/v1/offers/{shopID}` [GET]: Restituisce le offerte dello shop specificato ordinandole in modo crescente per prezzo.
+- `/api/v1/offers/{countryCode}` [GET]: Ritorna le offerte presenti nel paese specificato, includendo anche gli shop in cui trovare il prodotto.
+
+## Fonti Dati
+
+- API per gli shop
+- CSV per gli shop
+- API per le offerte

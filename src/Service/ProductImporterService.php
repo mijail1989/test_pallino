@@ -2,10 +2,10 @@
 
 namespace App\Service;
 
-use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 use App\Entity\Product;
 use App\Utils\ImporterUtils;
+use Doctrine\ORM\EntityManagerInterface;
 
 class ProductImporterService
 {
@@ -38,12 +38,12 @@ class ProductImporterService
 
         switch (count($values)) {
             case 1:
-                // Se c'è solo un elemento
+                 // If there is only one element, assign the category "uncategorized"
                 $product->setCategory("Uncategorized");
                 $product->setSubcategory($values[0]);
                 break;
             default:
-                // Se ci sono due o più elementi, rimuove il primo elemento, Unisce gli elementi rimanenti e li assegna come SubCategory
+                // If there are two or more elements, assign the first one as the category, remove it, and assign the remaining ones as subcategory
                 $product->setCategory($values[0]);
                 $subcategories = array_slice($values, 1);
                 $subcategory = implode(" - ", $subcategories);

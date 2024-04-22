@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Command;
+
 use Psr\Log\LoggerInterface;
 use App\Service\ApiConnectorService;
+use App\Service\DiscountImporterService;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use App\Service\DiscountImporterService;
-use Symfony\Component\Console\Attribute\AsCommand;
-use Symfony\Component\Console\Command\Command;
 
 #[AsCommand(name: 'app:discount_importer',description: 'Import Discounts Record From Static ENDPOINT',hidden: false,)]
 class DiscountImporterCommand extends Command {

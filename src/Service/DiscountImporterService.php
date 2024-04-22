@@ -2,11 +2,11 @@
 
 namespace App\Service;
 
-use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Shop;
 use App\Entity\Discount;
 use App\Utils\ImporterUtils;
 use App\Service\ProductImporterService;
+use Doctrine\ORM\EntityManagerInterface;
 
 class DiscountImporterService
 {

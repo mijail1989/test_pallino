@@ -2,8 +2,8 @@
 
 namespace App\Service;
 
-use Symfony\Component\HttpClient\HttpClient;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpClient\HttpClient;
 
 class ApiConnectorService
 {

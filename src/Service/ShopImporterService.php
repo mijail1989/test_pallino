@@ -2,10 +2,10 @@
 
 namespace App\Service;
 
-use Doctrine\ORM\EntityManagerInterface;
-use Psr\Log\LoggerInterface;
 use App\Entity\Shop;
 use App\Utils\ImporterUtils;
+use Psr\Log\LoggerInterface;
+use Doctrine\ORM\EntityManagerInterface;
 
 class ShopImporterService
 {
