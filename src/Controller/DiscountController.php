@@ -22,10 +22,8 @@ class DiscountController extends AbstractController
     public function getOffers($param)
     {
         if (is_numeric($param)) {
-            // If the parameter is a number (presumably shop.client_ID), call the getDiscountsByShop function
             return $this->getDiscountsByShop($param);
         } else {
-            // Otherwise, if the parameter is not a number, presumably countryCode, call the getOffersByCountry function
             return $this->getDiscountsByCountry($param);
         }
     }
@@ -39,7 +37,7 @@ class DiscountController extends AbstractController
      */
     public function getDiscountsByShop(int $shopID)
     {
-    return $this->json($this->discountManager->getDiscountsByShop($shopID));
+        return $this->json($this->discountManager->getDiscountsByShop($shopID));
     }
 
     /**

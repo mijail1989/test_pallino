@@ -12,7 +12,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand(name: 'app:csv_shop_importer',description: 'Import Shops Record from CSV File given the Path as an input Parameter',hidden: false,)]
-class ShopImporterFromCsvCommand extends Command {
+class ShopImporterFromCsvCommand extends Command 
+{
     
 
     private $csvReader;

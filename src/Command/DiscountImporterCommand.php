@@ -11,7 +11,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand(name: 'app:discount_importer',description: 'Import Discounts Record From Static ENDPOINT',hidden: false,)]
-class DiscountImporterCommand extends Command {
+class DiscountImporterCommand extends Command 
+{
     
     private $apiConnector;
     private $logger;

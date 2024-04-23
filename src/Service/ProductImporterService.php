@@ -38,12 +38,10 @@ class ProductImporterService
 
         switch (count($values)) {
             case 1:
-                 // If there is only one element, assign the category "uncategorized"
                 $product->setCategory("Uncategorized");
                 $product->setSubcategory($values[0]);
                 break;
             default:
-                // If there are two or more elements, assign the first one as the category, remove it, and assign the remaining ones as subcategory
                 $product->setCategory($values[0]);
                 $subcategories = array_slice($values, 1);
                 $subcategory = implode(" - ", $subcategories);

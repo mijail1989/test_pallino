@@ -11,7 +11,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand(name: 'app:shop_importer',description: 'Import Shops Record From Static ENDPOINT',hidden: false,)]
-class ShopImporterCommand extends Command {
+class ShopImporterCommand extends Command 
+{
     
     private $apiConnector;
     private $logger;
